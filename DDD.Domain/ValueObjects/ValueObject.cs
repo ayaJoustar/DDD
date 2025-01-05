@@ -22,6 +22,7 @@
         }
 
         protected abstract bool EqualsCore(T other);
+        protected abstract int GetHashCodeCore();
 
         public override string ToString()
         {
@@ -30,7 +31,7 @@
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return GetHashCodeCore();
         }
     }
 }

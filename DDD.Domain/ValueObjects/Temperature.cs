@@ -1,6 +1,4 @@
-﻿
-
-using DDD.Domain.Helpers;
+﻿using DDD.Domain.Helpers;
 
 namespace DDD.Domain.ValueObjects
 {
@@ -44,6 +42,11 @@ namespace DDD.Domain.ValueObjects
         protected override bool EqualsCore(Temperature other)
         {
             return Value == other.Value;
+        }
+
+        protected override int GetHashCodeCore()
+        {
+            return Value.GetHashCode();
         }
     }
 }

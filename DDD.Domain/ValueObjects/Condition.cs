@@ -70,5 +70,10 @@ namespace DDD.Domain.ValueObjects
                 Rainy,
             };
         }
+
+        protected override int GetHashCodeCore()
+        {
+            return Value.GetHashCode();
+        }
     }
 }
