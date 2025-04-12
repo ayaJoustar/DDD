@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDD.Domain\DDD.Domain.csproj" />
+    <ProjectReference Include="..\DDD.Infrastructure\DDD.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

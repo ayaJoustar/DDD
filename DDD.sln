@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.Domain", "DDD.Domain\DD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDTest.Tests", "DDDTest.Tests\DDDTest.Tests.csproj", "{7BDD91C1-26F7-4BC6-8AC2-C312C83520A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD.WPF", "DDD.WPF\DDD.WPF.csproj", "{C267E1C9-B893-40F3-BA50-D89104E67577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7BDD91C1-26F7-4BC6-8AC2-C312C83520A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BDD91C1-26F7-4BC6-8AC2-C312C83520A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BDD91C1-26F7-4BC6-8AC2-C312C83520A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C267E1C9-B893-40F3-BA50-D89104E67577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C267E1C9-B893-40F3-BA50-D89104E67577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C267E1C9-B893-40F3-BA50-D89104E67577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C267E1C9-B893-40F3-BA50-D89104E67577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
