@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using DDD.Domain.Entities;
 
 namespace DDD.WinForm.Common
 {
     internal static class SQLiteHelper
     {
 
-        internal const  string ConnectionString = @"Data Source =E:\Program Files (x86)\SQLite\DDD\DDD.db;version=3;";
+        internal const string ConnectionString = @"Data Source =E:\owner\development\DDD\DDD.Infrastructure\SQLite\DDD.db;version=3;";
 
-        internal static IReadOnlyList<T> Query<T>(string sql,Func<SQLiteDataReader,T>createEntity)
+        internal static IReadOnlyList<T> Query<T>(string sql, Func<SQLiteDataReader, T> createEntity)
         {
             var result = new List<T>();
             using (var connection = new SQLiteConnection(SQLiteHelper.ConnectionString))
@@ -34,7 +29,7 @@ namespace DDD.WinForm.Common
 
         internal static T QuerySingle<T>(string sql,
                                         SQLiteParameter[] parameters,
-                                        Func<SQLiteDataReader, T> createEntity,                                        
+                                        Func<SQLiteDataReader, T> createEntity,
                                         T nullEntity)
         {
 
@@ -43,16 +38,16 @@ namespace DDD.WinForm.Common
             {
                 connection.Open();
 
-                if(parameters != null)
+                if (parameters != null)
                 {
                     command.Parameters.AddRange(parameters);
                 }
-                
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                       return createEntity(reader);
+                        return createEntity(reader);
                     }
                 }
             }
@@ -71,7 +66,7 @@ namespace DDD.WinForm.Common
                     command.Parameters.AddRange(parameters);
                 }
 
-                if(command.ExecuteNonQuery() < 1)
+                if (command.ExecuteNonQuery() < 1)
                 {
                     command.CommandText = insert;
                     command.ExecuteNonQuery();
@@ -92,7 +87,7 @@ namespace DDD.WinForm.Common
                 }
 
                 command.ExecuteNonQuery();
- 
+
             }
         }
     }

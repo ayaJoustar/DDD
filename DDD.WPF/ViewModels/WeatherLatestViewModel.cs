@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using DDD.Domain.Entities;
 using DDD.Domain.Exceptions;
 using DDD.Domain.Repositories;
@@ -9,7 +8,7 @@ using Prism.Mvvm;
 
 namespace DDD.WPF.ViewModels
 {
-    public class WeatherLatestViewModel : BindableBase
+    public class WeatherLatestViewModel : ViewModelBase
     {
 
         private IWeatherRepository _weather;
@@ -33,7 +32,7 @@ namespace DDD.WPF.ViewModels
             LatestButton = new DelegateCommand(LatestButtonExecute);
         }
 
-        private ObservableCollection<AreaEntity> _areas = new ObservableCollection<AreaEntity>();
+        private ObservableCollection<AreaEntity> _areas = new();
         public ObservableCollection<AreaEntity> Areas
         {
             get { return _areas; }
@@ -84,7 +83,7 @@ namespace DDD.WPF.ViewModels
 
         private void LatestButtonExecute()
         {
-            if(SelectedArea == null)
+            if (SelectedArea == null)
             {
                 throw new InputException("地域を選択してください。");
             }

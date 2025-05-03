@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using DDD.Domain.Exceptions;
+using DDD.WPF.ViewModels;
 using DDD.WPF.Views;
 using Prism.Ioc;
 
@@ -46,6 +47,9 @@ namespace DDD.WPF
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<WeatherLatestView>();
+            containerRegistry.RegisterForNavigation<WeatherListView>();
+            containerRegistry.RegisterDialog<WeatherSaveView, WeatherSaveViewModel>();
+            containerRegistry.RegisterSingleton<MainWindowViewModel>();
         }
     }
 }
